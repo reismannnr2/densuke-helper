@@ -1,25 +1,28 @@
 /** @jsx jsx */
-import { css, jsx, Interpolation } from '@emotion/core';
+import { css, Interpolation, jsx } from '@emotion/core';
 import React, { PropsWithChildren } from 'react';
 import { ObservableState } from '@reismannnr2/observable-state';
 import { useCurrentState$ } from '@reismannnr2/react-observable-state-hooks';
 import { toggleBox } from './common-styles';
 
-export function ToggleBox(
+export function RadioBox<List extends string>(
   props: PropsWithChildren<{
-    check$: ObservableState<boolean>;
+    value: List;
+    target$: ObservableState<List>;
     styles?: Interpolation;
   }>,
 ): React.ReactElement | null {
-  const [checked] = useCurrentState$(props.check$);
+  const [current] = useCurrentState$(props.target$);
+  const checked = current === props.value;
   return (
     <label css={css({ display: 'block' })}>
       <input
-        type="checkbox"
+        type="radio"
         checked={checked}
         css={css({ display: 'none' })}
-        onChange={(e) => {
-          props.check$.update(() => e.target.checked);
+        value={props.value}
+        onChange={() => {
+          props.target$.update(() => props.value);
         }}
       />
       <div css={css(toggleBox(checked), props.styles)}>{props.children}</div>
