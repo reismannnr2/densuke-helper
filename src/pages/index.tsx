@@ -3,7 +3,10 @@ import { css, jsx } from '@emotion/core';
 import React from 'react';
 import { Layout } from 'src/components/layout';
 import { StateContext, state$ } from 'src/state';
-import { Pattern } from 'src/components/pattern';
+import { Patterns } from 'src/components/patterns';
+import { DensukeOutput } from 'src/components/densuke-output';
+import { BaseSetting } from 'src/components/base-setting';
+import { Usage } from 'src/components/usage';
 
 function Main(): React.ReactElement | null {
   return (
@@ -13,9 +16,11 @@ function Main(): React.ReactElement | null {
         padding: 8,
       })}
     >
-      <Pattern />
-      <Pattern />
-      <Pattern />
+      <h1>伝助ヘルパー</h1>
+      <Usage />
+      <BaseSetting />
+      <Patterns />
+      <DensukeOutput />
     </main>
   );
 }

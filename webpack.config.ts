@@ -20,7 +20,7 @@ export default (() => {
     rules,
   };
   const entry: webpack.Entry = {
-    app: './src/app.tsx',
+    app: './src/index.tsx',
   };
   const output: webpack.Output = {
     filename: 'app.js',
