@@ -1,6 +1,6 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
-import startOfDay from 'date-fns/startOfMonth';
+import startOfDay from 'date-fns/startOfDay';
 import lastDayOfMonth from 'date-fns/lastDayOfMonth';
 import { ObservableState } from '@reismannnr2/observable-state';
 
