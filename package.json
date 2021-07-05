@@ -11,18 +11,18 @@
     "build:production": "cross-env NODE_ENV=production webpack --config webpack.config.production.ts",
     "start:production": "npm run clean && build:production && serve docs",
     "ts-run": "ts-node -r tsconfig-paths/register",
-    "clean": "rm -rf ./dist",
+    "clean": "rm -rf ./docs",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:reismannnr2/lessheet-client.git"
+    "url": "git@github.com:reismannnr2/densuke-helper.git"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "@emotion/core": "^10.0.35",
-    "@holiday-jp/holiday_jp": "^2.2.3",
+    "@holiday-jp/holiday_jp": "^2.3.0",
     "@reismannnr2/observable-state": "^0.1.1",
     "@reismannnr2/react-observable-state-hooks": "^0.1.1",
     "date-fns": "^2.16.1",

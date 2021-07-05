@@ -9,7 +9,12 @@ export default (() => {
   const rules: webpack.RuleSetRule[] = [
     {
       test: /\.tsx?$/,
-      use: 'ts-loader',
+      use: {
+        loader: 'ts-loader',
+        options: {
+          configFile: 'tsconfig.webpack.json'
+        },
+      },
     },
     {
       test: /\.css$/,
